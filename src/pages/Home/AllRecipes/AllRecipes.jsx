@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 const AllRecipes = () => {
     const [recipes, setRecipes] = useState([]);
-    const[loading,setLoading] =useState(true)
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
         fetch('https://recipe-web-app-server.vercel.app/recipes')
             .then(res => res.json())
@@ -61,35 +61,35 @@ const AllRecipes = () => {
         <div className='container mx-auto my-5 txt'>
             <h1 className='text-center text-3xl font-bold'>What We Offer</h1>
             <div className='w-1/2 flex justify-center mt-5'>
-            <Link to="/create"><button className="btn btn-neutral ">Create</button></Link>
+                <Link to="/create"><button className="btn btn-neutral ">Create</button></Link>
             </div>
-            
-            <div className="overflow-x-auto my-5 flex justify-center">
-           
-            
-            {loading?<span className="loading loading-bars loading-lg"></span>:
-                <table className="table w-1/2">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Title</th>
-                            <th>Action</th>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                 
-                               {recipes.map((recipe, index) => (
+            <div className="overflow-x-auto my-5 flex justify-center">
+
+
+                {loading ? <span className="loading loading-bars loading-lg"></span> :
+                    <table className="table w-1/2">
+                        {/* head */}
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Title</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {recipes.map((recipe, index) => (
                                 <tr key={recipe._id}>
-                                    <th>{index+1}</th>
+                                    <th>{index + 1}</th>
                                     <td>{recipe.title}</td>
                                     <td><button><Link to={`recipes/${recipe._id}`}><IoIosInformationCircle /></Link></button> | <Link to={`edit/${recipe._id}`}><button><FaEdit /></button></Link> | <button onClick={() => handleDelete(recipe._id)}><MdDelete /></button></td>
                                 </tr>
                             ))}
-              
-                    </tbody>
-                </table>}
+
+                        </tbody>
+                    </table>}
             </div>
         </div>
     );

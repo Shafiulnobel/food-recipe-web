@@ -113,6 +113,7 @@ const Edit = () => {
     return (
         <div>
             <form onSubmit={handleSubmit} className="max-w-sm mx-auto my-5">
+              {/* title */}
                 <div className="mb-5">
                     <label
                         htmlFor="title"
@@ -130,10 +131,12 @@ const Edit = () => {
                         placeholder="Recipe Title"
                         required
                     />
+                    {/* showing error */}
                     {titleError && (
                         <p className="text-red-500 text-sm mt-1">{titleError}</p>
                     )}
                 </div>
+                {/* ingredient */}
                 <div className="mb-5">
                     <label
                         htmlFor="ingredient"
@@ -157,6 +160,7 @@ const Edit = () => {
                             Add
                         </button>
                     </div>
+                    {/* showing error */}
                     {ingredientsError && (
                         <p className="text-red-500 text-sm mt-1">{ingredientsError}</p>
                     )}
@@ -180,6 +184,7 @@ const Edit = () => {
                         ))}
                     </ul>
                 </div>
+                {/* instruction */}
                 <div className="mb-5">
                     <label
                         htmlFor="instruction"
@@ -197,6 +202,7 @@ const Edit = () => {
                         placeholder="Instruction"
                         required
                     ></textarea>
+                    {/* showing error */}
                     {instructionError && (
                         <p className="text-red-500 text-sm mt-1">{instructionError}</p>
                     )}

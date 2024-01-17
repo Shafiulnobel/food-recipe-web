@@ -92,13 +92,16 @@ const Create = () => {
     return (
         <div>
             <form onSubmit={handleSubmit} class="max-w-sm mx-auto my-5 txt">
+                {/* title */}
                 <div class="mb-5">
                     <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Recipe Title</label>
                     <input type="text" value={recipeData.title} onChange={handleInputChange} name='title' id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Recipe Title" required />
+                    {/* showing error */}
                     {titleError && (
                         <p className="text-red-500 text-sm mt-1">{titleError}</p>
                     )}
                 </div>
+                {/* ingredient */}
                 <div className="mb-5">
                     <label
                         htmlFor="ingredient"
@@ -123,6 +126,7 @@ const Create = () => {
                             Add
                         </button>
                     </div>
+                    {/* showing error */}
                     {ingredientsError && (
                         <p className="text-red-500 text-sm mt-1">{ingredientsError}</p>
                     )}
@@ -143,9 +147,11 @@ const Create = () => {
                         ))}
                     </ul>
                 </div>
+                {/* instruction */}
                 <div class="mb-5">
                     <label for="instruction" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Recipe Instruction</label>
                     <textarea id="instruction" value={recipeData.instruction} onChange={handleInputChange} name='instruction' rows="10" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Instruction" required></textarea>
+                    {/* showing error */}
                     {instructionError && (
                         <p className="text-red-500 text-sm mt-1">{instructionError}</p>
                     )}
