@@ -1,0 +1,8 @@
+.active{
+    color: rgb(194, 117, 117);
+    text-decoration: none;
+}
+.inactive{
+    text-decoration: none;
+    color: black;
+}

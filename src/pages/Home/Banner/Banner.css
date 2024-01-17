@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+.bg{
+    background-image: url(../../../assets/foodhub-slider-main-food-v4.jpg);
+    background-repeat: no-repeat;
+   
+}
+h1{
+    font-family: 'Poppins', sans-serif;
+
+}
+p{
+    font-family: 'Poppins', sans-serif;
+
+}
